@@ -69,7 +69,7 @@ export default function Hero() {
           >
             Godspeed Welding erects structural steel and builds custom
             fabrication for general contractors and developers across the
-            country — OSHA 10/30-trained crews, in-house shop capability, and
+            country — 10+ years in the field, OSHA 10/30-trained crews, and
             a schedule you can bid against.
           </motion.p>
 

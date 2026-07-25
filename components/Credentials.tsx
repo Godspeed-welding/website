@@ -1,26 +1,26 @@
-// NOTE for Brock: add AISC certification, bonding capacity, EMR rating, and
-// years-in-business here as soon as you have the documentation - these are
-// the numbers that actually differentiate a bid, more than OSHA 10/30 alone.
+// NOTE for Brock: swap in the exact safety-hours/incident-free number here
+// as soon as you have it pulled - that's the strongest plate on this list
+// once it's a real figure instead of a placeholder.
 const CREDENTIALS = [
+  {
+    label: "Experience",
+    value: "10+ Years in Operation",
+    note: "Structural steel erection, welding, and fabrication since day one.",
+  },
   {
     label: "Crew Training",
     value: "OSHA 10 & 30 Certified",
     note: "Every crew member trained before stepping on site.",
   },
   {
-    label: "Capability",
-    value: "In-House Fab + Erection",
-    note: "No subcontracting the structural work.",
+    label: "Equipment",
+    value: "Owned + Partner Crane Fleet",
+    note: "Right-sized rigging for every lift, in-house or partnered.",
   },
   {
     label: "Bid Reach",
     value: "Nationwide",
     note: "Retail, industrial, and agricultural commercial builds.",
-  },
-  {
-    label: "Accountability",
-    value: "One Crew, Quote to Punch List",
-    note: "Same team on the bid is the team on the roof.",
   },
 ];
 

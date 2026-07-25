@@ -23,10 +23,11 @@ export default function AboutPage() {
           <p className="text-lg text-steel-silver leading-relaxed">
             A lot of companies bidding commercial steel work are really just
             project managers with a phone full of subcontractors. Godspeed
-            Welding isn't that. The crew that bids your job is the crew that
-            shows up to erect it, weld it, and fabricate the pieces that
-            don't come out of a catalog — which means the standard doesn't
-            drop the further a project gets from the office.
+            Welding isn't that. Over 10+ years in the field, the crew that
+            bids your job is the crew that shows up to erect it, weld it,
+            and fabricate the pieces that don't come out of a catalog —
+            which means the standard doesn't drop the further a project
+            gets from the office.
           </p>
           <p className="text-steel-silver-dim leading-relaxed">
             We're based in North Carolina and bid nationwide. Retail

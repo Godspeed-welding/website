@@ -21,7 +21,7 @@ const PROCESS = [
     n: "02",
     title: "Rigging & Crane Planning",
     copy:
-      "We size the crane to the heaviest pick and the longest reach on the job, not the average one. Rigging plans account for tandem picks, tight urban sites, and overhead obstructions before the crane ever shows up.",
+      "We size the crane to the heaviest pick and the longest reach on the job, not the average one — drawing on our own equipment or a partnered crane fleet depending on what the lift actually calls for. Rigging plans account for tandem picks, tight urban sites, and overhead obstructions before the crane ever shows up.",
   },
   {
     n: "03",
