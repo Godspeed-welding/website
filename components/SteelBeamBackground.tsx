@@ -1,34 +1,12 @@
 "use client";
 
-import { RefObject } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 // A technical line-drawing of a steel frame, built entirely in SVG - no
-// photo. The frame assembles as the user scrolls, driven by real scroll
-// position against the tall outer section in Hero.tsx (the sticky pin
-// pattern) - not this component's own container, since that's pinned in
-// place and wouldn't produce useful scroll progress on its own.
-export default function SteelBeamBackground({
-  scrollRef,
-}: {
-  scrollRef: RefObject<HTMLDivElement | null>;
-}) {
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end start"],
-  });
-
-  const seg = (start: number, end: number) => useTransform(scrollYProgress, [start, end], [0, 1]);
-
-  const baseLine = seg(0, 0.12);
-  const col1 = seg(0.05, 0.2);
-  const col2 = seg(0.1, 0.25);
-  const col3 = seg(0.15, 0.3);
-  const beams = seg(0.28, 0.42);
-  const bracing = seg(0.4, 0.55);
-  const bolts = seg(0.52, 0.6);
-  const callout = seg(0.58, 0.68);
-
+// photo, a few KB instead of a multi-MB image. Simple on-load reveal,
+// positioned in the right two-thirds of the frame so it never competes
+// with the headline, which sits bottom-left.
+export default function SteelBeamBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-black">
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -58,19 +36,34 @@ export default function SteelBeamBackground({
             strokeWidth="1"
             fill="none"
             opacity="0.22"
-            style={{ pathLength: baseLine }}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 1.1, ease: "easeInOut" }}
           />
 
-          <motion.line x1={780} y1={560} x2={780} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col1 }} />
-          <motion.line x1={960} y1={560} x2={960} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col2 }} />
-          <motion.line x1={1140} y1={560} x2={1140} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col3 }} />
+          {[780, 960, 1140].map((x, i) => (
+            <motion.line
+              key={x}
+              x1={x}
+              y1={560}
+              x2={x}
+              y2={260}
+              stroke="white"
+              strokeWidth="2"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.15 + i * 0.1, ease: "easeInOut" }}
+            />
+          ))}
 
           <motion.path
             d="M780 260 L960 240 L1140 260"
             stroke="white"
             strokeWidth="2.5"
             fill="none"
-            style={{ pathLength: beams }}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 0.9, delay: 0.55, ease: "easeInOut" }}
           />
 
           <motion.path
@@ -80,14 +73,16 @@ export default function SteelBeamBackground({
             strokeDasharray="4 5"
             fill="none"
             opacity="0.35"
-            style={{ pathLength: bracing }}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 1, delay: 0.9, ease: "easeInOut" }}
           />
 
           {[
             [780, 260],
             [960, 240],
             [1140, 260],
-          ].map(([cx, cy]) => (
+          ].map(([cx, cy], i) => (
             <motion.circle
               key={`${cx}-${cy}`}
               cx={cx}
@@ -96,11 +91,17 @@ export default function SteelBeamBackground({
               stroke="white"
               strokeWidth="1.5"
               fill="black"
-              style={{ scale: bolts, opacity: bolts }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 1.3 + i * 0.08 }}
             />
           ))}
 
-          <motion.g style={{ opacity: callout }}>
+          <motion.g
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
+          >
             <line x1="780" y1="205" x2="1140" y2="205" stroke="white" strokeWidth="0.75" opacity="0.45" />
             <line x1="780" y1="200" x2="780" y2="210" stroke="white" strokeWidth="0.75" opacity="0.45" />
             <line x1="1140" y1="200" x2="1140" y2="210" stroke="white" strokeWidth="0.75" opacity="0.45" />
