@@ -81,7 +81,7 @@ export default function Hero() {
           >
             <a
               href="tel:+17044986870"
-              className="font-display uppercase tracking-wider text-sm md:text-base bg-ember hover:bg-ember-bright text-white px-7 py-3.5 transition-colors"
+              className="font-display uppercase tracking-wider text-sm md:text-base bg-white hover:bg-steel-silver text-charcoal px-7 py-3.5 transition-colors"
             >
               Call (704) 498-6870
             </a>

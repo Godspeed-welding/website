@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --charcoal: #0e0d0c;
-  --gunmetal: #1a1917;
-  --gunmetal-light: #242220;
-  --steel-silver: #c4c0b8;
-  --steel-silver-dim: #78746c;
-  --ember: #c8500f;
-  --ember-bright: #ea6a1f;
-  --weld-spark: #ffb347;
-  --weld-hot: #fff2df;
+  --charcoal: #0a0a0a;
+  --gunmetal: #161616;
+  --gunmetal-light: #202020;
+  --steel-silver: #d4d2cc;
+  --steel-silver-dim: #8a8880;
+  --ember: #f2ede2;
+  --ember-bright: #ffffff;
+  --weld-spark: #ffffff;
+  --weld-hot: #ffffff;
 }
 
 @theme inline {
@@ -38,15 +38,14 @@ body {
   position: relative;
 }
 
-/* grain/noise texture over everything - the difference between "dark mode
-   app" and "actually looks like a job site." Subtle, not a gimmick. */
+/* subtle grain - keeps flat black/white from feeling like a flat UI mockup */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -61,8 +60,7 @@ body::before {
 }
 
 .plate-heading {
-  color: #f2ede2;
-  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
 .data-plate {
@@ -70,28 +68,17 @@ body::before {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
 }
 
-/* diamond-plate texture - used sparingly as a structural divider */
+/* diamond-plate texture - monochrome, used sparingly as a structural divider */
 .tread-plate {
   background-color: var(--gunmetal);
   background-image:
-    repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 10px),
-    repeating-linear-gradient(-45deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 10px);
-}
-
-/* hazard stripe accent - black/ember diagonal stripes at hard section breaks only */
-.hazard-stripe {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--ember) 0,
-    var(--ember) 14px,
-    #000 14px,
-    #000 28px
-  );
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 10px);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--ember-bright);
+  outline: 2px solid #ffffff;
   outline-offset: 3px;
 }
 
@@ -106,13 +93,13 @@ button:focus-visible {
   top: 50%;
   width: 0.7rem;
   height: 2px;
-  background: var(--ember-bright);
+  background: #ffffff;
   transform: translateY(-50%);
 }
 
 ::selection {
-  background: var(--ember);
-  color: #fff;
+  background: #ffffff;
+  color: #000;
 }
 
 .prose-article h2 {
@@ -120,7 +107,7 @@ button:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.75rem;
-  color: #f2ede2;
+  color: #ffffff;
   margin-top: 2.75rem;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -131,7 +118,7 @@ button:focus-visible {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.25rem;
-  color: #f2ede2;
+  color: #ffffff;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -171,7 +158,7 @@ button:focus-visible {
   top: 0.65em;
   width: 0.6rem;
   height: 2px;
-  background: var(--ember-bright);
+  background: #ffffff;
 }
 
 .prose-article ol {
@@ -180,7 +167,7 @@ button:focus-visible {
 }
 
 .prose-article ol li::marker {
-  color: var(--ember-bright);
+  color: #ffffff;
   font-family: var(--font-utility), monospace;
 }
 
@@ -190,7 +177,7 @@ button:focus-visible {
 }
 
 .prose-article blockquote {
-  border-left: 2px solid var(--ember);
+  border-left: 2px solid #ffffff;
   padding-left: 1.25rem;
   color: var(--steel-silver-dim);
   font-style: italic;

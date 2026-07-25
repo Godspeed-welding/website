@@ -36,14 +36,14 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="hazard-stripe h-1.5" />
-      <div className="bg-black border-b border-ember/40">
+      <div className="h-[2px] bg-white" />
+      <div className="bg-black border-b border-white/15">
         <div className="mx-auto max-w-7xl px-6 md:px-10 h-9 flex items-center justify-between text-xs font-utility tracking-wide">
           <span className="hidden sm:inline text-steel-silver-dim uppercase tracking-widest">
             OSHA 10/30 Certified Crews · Bidding Nationwide
           </span>
           <div className="flex items-center gap-4 ml-auto">
-            <a href="tel:+17044986870" className="text-ember-bright hover:text-white font-semibold transition-colors">
+            <a href="tel:+17044986870" className="text-white font-semibold tracking-wide hover:text-steel-silver-dim transition-colors">
               (704) 498-6870
             </a>
             <a href="mailto:justin@godspeedwelding.com" className="hidden sm:inline text-steel-silver-dim hover:text-white transition-colors">
