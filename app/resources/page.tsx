@@ -27,10 +27,10 @@ export default function ResourcesPage() {
               href={`/resources/${r.slug}`}
               className="group block py-8 first:pt-0"
             >
-              <p className="font-utility text-xs tracking-widest uppercase text-arc-blue-bright mb-3">
+              <p className="font-utility text-xs tracking-widest uppercase text-ember-bright mb-3">
                 {r.category} · {r.readTime}
               </p>
-              <h2 className="font-display font-bold uppercase text-2xl md:text-3xl text-white group-hover:text-arc-blue-bright transition-colors mb-3 leading-tight">
+              <h2 className="font-display font-bold uppercase text-2xl md:text-3xl text-white group-hover:text-ember-bright transition-colors mb-3 leading-tight">
                 {r.title}
               </h2>
               <p className="text-steel-silver-dim leading-relaxed max-w-2xl">{r.dek}</p>

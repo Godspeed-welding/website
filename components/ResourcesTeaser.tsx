@@ -8,7 +8,7 @@ export default function ResourcesTeaser() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+            <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
               Resource Center
             </p>
             <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
@@ -17,7 +17,7 @@ export default function ResourcesTeaser() {
           </div>
           <Link
             href="/resources"
-            className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-arc-blue-bright hover:text-white text-steel-silver px-6 py-3 rounded-[1px] transition-colors"
+            className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-ember-bright hover:text-white text-steel-silver px-6 py-3 rounded-[1px] transition-colors"
           >
             All Resources
           </Link>
@@ -26,11 +26,11 @@ export default function ResourcesTeaser() {
         <div className="grid md:grid-cols-3 gap-px bg-white/10">
           {items.map((r) => (
             <div key={r.slug} className="bg-gunmetal p-7">
-              <p className="font-utility text-xs tracking-widest uppercase text-arc-blue-bright mb-3">
+              <p className="font-utility text-xs tracking-widest uppercase text-ember-bright mb-3">
                 {r.category}
               </p>
               <Link href={`/resources/${r.slug}`} className="group">
-                <h3 className="font-display font-bold uppercase text-xl text-white mb-3 group-hover:text-arc-blue-bright transition-colors leading-tight">
+                <h3 className="font-display font-bold uppercase text-xl text-white mb-3 group-hover:text-ember-bright transition-colors leading-tight">
                   {r.title}
                 </h3>
               </Link>

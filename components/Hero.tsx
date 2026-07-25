@@ -18,13 +18,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/75 to-charcoal/30" />
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 via-transparent to-charcoal/50" />
 
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 md:px-10 pb-16 md:pb-24 pt-44">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 md:px-10 pb-16 md:pb-24 pt-48">
         <div className="max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="spec-tick font-utility text-xs md:text-sm tracking-[0.25em] uppercase text-arc-blue-bright mb-5"
+            className="spec-tick font-utility text-xs md:text-sm tracking-[0.25em] uppercase text-ember-bright mb-5"
           >
             Commercial Steel Erection · Welding · Fabrication
           </motion.p>
@@ -58,7 +58,7 @@ export default function Hero() {
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeInOut" }}
             style={{ transformOrigin: "left" }}
-            className="h-[3px] w-40 md:w-56 bg-arc-blue mt-6 mb-7"
+            className="h-[3px] w-40 md:w-56 bg-ember mt-6 mb-7"
           />
 
           <motion.p
@@ -81,7 +81,7 @@ export default function Hero() {
           >
             <a
               href="tel:+17044986870"
-              className="font-display uppercase tracking-wider text-sm md:text-base bg-arc-blue hover:bg-arc-blue-bright text-white px-7 py-3.5 transition-colors"
+              className="font-display uppercase tracking-wider text-sm md:text-base bg-ember hover:bg-ember-bright text-white px-7 py-3.5 transition-colors"
             >
               Call (704) 498-6870
             </a>

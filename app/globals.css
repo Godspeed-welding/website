@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --charcoal: #14171b;
-  --gunmetal: #22262d;
-  --gunmetal-light: #2e333c;
-  --steel-silver: #b8c0c8;
-  --steel-silver-dim: #6b7480;
-  --arc-blue: #3b7ddd;
-  --arc-blue-bright: #5b9bf5;
-  --weld-spark: #ffd9a0;
+  --charcoal: #0e0d0c;
+  --gunmetal: #1a1917;
+  --gunmetal-light: #242220;
+  --steel-silver: #c4c0b8;
+  --steel-silver-dim: #78746c;
+  --ember: #c8500f;
+  --ember-bright: #ea6a1f;
+  --weld-spark: #ffb347;
   --weld-hot: #fff2df;
 }
 
@@ -18,8 +18,8 @@
   --color-gunmetal-light: var(--gunmetal-light);
   --color-steel-silver: var(--steel-silver);
   --color-steel-silver-dim: var(--steel-silver-dim);
-  --color-arc-blue: var(--arc-blue);
-  --color-arc-blue-bright: var(--arc-blue-bright);
+  --color-ember: var(--ember);
+  --color-ember-bright: var(--ember-bright);
   --color-weld-spark: var(--weld-spark);
   --color-weld-hot: var(--weld-hot);
   --font-display: var(--font-barlow-condensed);
@@ -35,6 +35,20 @@ body {
   background: var(--charcoal);
   color: var(--steel-silver);
   font-family: var(--font-body), sans-serif;
+  position: relative;
+}
+
+/* grain/noise texture over everything - the difference between "dark mode
+   app" and "actually looks like a job site." Subtle, not a gimmick. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -46,25 +60,41 @@ body {
   }
 }
 
-/* Solid, restrained heading treatment - no gradient-clip effects.
-   This is a commercial steel erector's site, not a SaaS landing page. */
 .plate-heading {
-  color: #eef1f4;
+  color: #f2ede2;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* nameplate / spec-sheet style badge, used for certifications and data */
 .data-plate {
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
+}
+
+/* diamond-plate texture - used sparingly as a structural divider */
+.tread-plate {
+  background-color: var(--gunmetal);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 10px);
+}
+
+/* hazard stripe accent - black/ember diagonal stripes at hard section breaks only */
+.hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--ember) 0,
+    var(--ember) 14px,
+    #000 14px,
+    #000 28px
+  );
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--arc-blue-bright);
+  outline: 2px solid var(--ember-bright);
   outline-offset: 3px;
 }
 
-/* thin technical-drawing style corner ticks for section eyebrows */
 .spec-tick {
   position: relative;
   padding-left: 1.1rem;
@@ -75,13 +105,13 @@ button:focus-visible {
   left: 0;
   top: 50%;
   width: 0.7rem;
-  height: 1px;
-  background: var(--arc-blue-bright);
+  height: 2px;
+  background: var(--ember-bright);
   transform: translateY(-50%);
 }
 
 ::selection {
-  background: var(--arc-blue);
+  background: var(--ember);
   color: #fff;
 }
 
@@ -90,7 +120,7 @@ button:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.75rem;
-  color: #eef1f4;
+  color: #f2ede2;
   margin-top: 2.75rem;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -101,7 +131,7 @@ button:focus-visible {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.25rem;
-  color: #eef1f4;
+  color: #f2ede2;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -140,8 +170,8 @@ button:focus-visible {
   left: 0;
   top: 0.65em;
   width: 0.6rem;
-  height: 1px;
-  background: var(--arc-blue-bright);
+  height: 2px;
+  background: var(--ember-bright);
 }
 
 .prose-article ol {
@@ -150,7 +180,7 @@ button:focus-visible {
 }
 
 .prose-article ol li::marker {
-  color: var(--arc-blue-bright);
+  color: var(--ember-bright);
   font-family: var(--font-utility), monospace;
 }
 
@@ -160,7 +190,7 @@ button:focus-visible {
 }
 
 .prose-article blockquote {
-  border-left: 2px solid var(--arc-blue);
+  border-left: 2px solid var(--ember);
   padding-left: 1.25rem;
   color: var(--steel-silver-dim);
   font-style: italic;

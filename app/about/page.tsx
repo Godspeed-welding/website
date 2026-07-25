@@ -43,7 +43,7 @@ export default function AboutPage() {
 
       <section className="bg-charcoal py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             How We Work
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-8">

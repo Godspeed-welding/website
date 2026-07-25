@@ -35,17 +35,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
             <Link href="/" className="font-display font-extrabold uppercase tracking-wide text-xl text-white">
-              Godspeed <span className="text-arc-blue-bright">Welding</span>
+              Godspeed <span className="text-ember-bright">Welding</span>
             </Link>
             <p className="mt-4 text-sm text-steel-silver-dim leading-relaxed max-w-xs">
               Commercial steel erection, structural welding, and custom
               fabrication. Nationwide bid work.
             </p>
             <div className="mt-5 flex flex-col gap-1.5">
-              <a href="tel:+17044986870" className="text-sm text-white hover:text-arc-blue-bright transition-colors">
+              <a href="tel:+17044986870" className="text-sm text-white hover:text-ember-bright transition-colors">
                 (704) 498-6870
               </a>
-              <a href="mailto:justin@godspeedwelding.com" className="text-sm text-white hover:text-arc-blue-bright transition-colors">
+              <a href="mailto:justin@godspeedwelding.com" className="text-sm text-white hover:text-ember-bright transition-colors">
                 justin@godspeedwelding.com
               </a>
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-sm text-steel-silver hover:text-arc-blue-bright transition-colors">
+                    <Link href={l.href} className="text-sm text-steel-silver hover:text-ember-bright transition-colors">
                       {l.label}
                     </Link>
                   </li>

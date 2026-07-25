@@ -28,7 +28,7 @@ export default function BuildingTypesTeaser() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+            <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
               Who We Build For
             </p>
             <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
@@ -42,7 +42,7 @@ export default function BuildingTypesTeaser() {
             <Link
               key={t.href}
               href={t.href}
-              className="group block relative h-72 overflow-hidden border border-white/10 hover:border-arc-blue/60 transition-colors"
+              className="group block relative h-72 overflow-hidden border border-white/10 hover:border-ember/60 transition-colors"
             >
               <Image
                 src={t.img}

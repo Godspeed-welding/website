@@ -103,7 +103,7 @@ export default function StructuralSteelErectionPage() {
 
       <section className="bg-gunmetal py-20 md:py-24 border-y border-white/10">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             How It Works
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-12">
@@ -112,7 +112,7 @@ export default function StructuralSteelErectionPage() {
           <div className="space-y-10">
             {PROCESS.map((p) => (
               <div key={p.n} className="grid md:grid-cols-[80px_1fr] gap-4 md:gap-8 border-t border-white/10 pt-8 first:border-0 first:pt-0">
-                <span className="font-utility text-arc-blue-bright text-3xl">{p.n}</span>
+                <span className="font-utility text-ember-bright text-3xl">{p.n}</span>
                 <div>
                   <h3 className="font-display font-bold uppercase text-xl text-white mb-2">
                     {p.title}
@@ -127,7 +127,7 @@ export default function StructuralSteelErectionPage() {
 
       <section className="bg-charcoal py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             Where We Erect
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-6">
@@ -139,13 +139,13 @@ export default function StructuralSteelErectionPage() {
             We bid and erect all three.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/building-types/retail-big-box" className="border border-white/15 hover:border-arc-blue-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
+            <Link href="/building-types/retail-big-box" className="border border-white/15 hover:border-ember-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
               Retail &amp; Big-Box &rarr;
             </Link>
-            <Link href="/building-types/industrial-warehouse" className="border border-white/15 hover:border-arc-blue-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
+            <Link href="/building-types/industrial-warehouse" className="border border-white/15 hover:border-ember-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
               Industrial &amp; Warehouse &rarr;
             </Link>
-            <Link href="/building-types/agricultural-rural" className="border border-white/15 hover:border-arc-blue-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
+            <Link href="/building-types/agricultural-rural" className="border border-white/15 hover:border-ember-bright px-5 py-3 font-display uppercase text-sm tracking-wider text-steel-silver hover:text-white transition-colors">
               Agricultural &amp; Rural &rarr;
             </Link>
           </div>
@@ -154,7 +154,7 @@ export default function StructuralSteelErectionPage() {
 
       <section className="bg-gunmetal py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             Common Questions
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-10">

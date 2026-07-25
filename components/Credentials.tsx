@@ -26,9 +26,9 @@ const CREDENTIALS = [
 
 export default function Credentials() {
   return (
-    <section className="border-y border-white/10 bg-gunmetal">
+    <section className="border-y border-ember/20 tread-plate">
       <div className="mx-auto max-w-7xl px-6 md:px-10 py-14 md:py-16">
-        <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-8">
+        <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-8">
           Credentials &amp; Standards
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">

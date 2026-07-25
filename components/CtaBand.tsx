@@ -22,7 +22,7 @@ export default function CtaBand({
         <div className="shrink-0 flex flex-wrap gap-3">
           <a
             href={`tel:${PHONE_TEL}`}
-            className="font-display uppercase tracking-wider text-sm md:text-base bg-arc-blue hover:bg-arc-blue-bright text-white px-7 py-4 rounded-[1px] transition-colors"
+            className="font-display uppercase tracking-wider text-sm md:text-base bg-ember hover:bg-ember-bright text-white px-7 py-4 rounded-[1px] transition-colors"
           >
             Call {PHONE_DISPLAY}
           </a>

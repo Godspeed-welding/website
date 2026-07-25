@@ -33,7 +33,7 @@ export default function Capabilities() {
     <section id="capabilities" className="relative bg-gunmetal py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             What We Build
           </p>
           <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
@@ -43,7 +43,7 @@ export default function Capabilities() {
 
         <div className="grid md:grid-cols-3 gap-px bg-white/10">
           {CAPS.map((c) => (
-            <div key={c.title} className="relative bg-gunmetal-light overflow-hidden border-t-2 border-transparent hover:border-arc-blue transition-colors">
+            <div key={c.title} className="relative bg-gunmetal-light overflow-hidden border-t-2 border-transparent hover:border-ember transition-colors">
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={c.img}
@@ -61,7 +61,7 @@ export default function Capabilities() {
                 <p className="text-steel-silver-dim leading-relaxed mb-4">{c.copy}</p>
                 <Link
                   href={c.href}
-                  className="inline-flex items-center gap-2 font-display uppercase tracking-wider text-sm text-arc-blue-bright hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 font-display uppercase tracking-wider text-sm text-ember-bright hover:text-white transition-colors"
                 >
                   Learn More <span aria-hidden>&rarr;</span>
                 </Link>

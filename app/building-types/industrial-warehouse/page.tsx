@@ -74,7 +74,7 @@ export default function IndustrialWarehousePage() {
 
       <section className="bg-gunmetal py-20 md:py-24 border-y border-white/10">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             What's Different Here
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-12">
@@ -82,7 +82,7 @@ export default function IndustrialWarehousePage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-10">
             {CONSIDERATIONS.map((c) => (
-              <div key={c.title} className="border-t-2 border-arc-blue/50 pt-5">
+              <div key={c.title} className="border-t-2 border-ember/50 pt-5">
                 <h3 className="font-display font-bold uppercase text-xl text-white mb-3">
                   {c.title}
                 </h3>
@@ -97,7 +97,7 @@ export default function IndustrialWarehousePage() {
         <div className="mx-auto max-w-4xl px-6 md:px-10">
           <p className="text-steel-silver-dim">
             Related service:{" "}
-            <Link href="/services/structural-steel-erection" className="text-arc-blue-bright hover:text-white transition-colors">
+            <Link href="/services/structural-steel-erection" className="text-ember-bright hover:text-white transition-colors">
               Structural Steel Erection &rarr;
             </Link>
           </p>
@@ -106,7 +106,7 @@ export default function IndustrialWarehousePage() {
 
       <section className="bg-gunmetal py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             Common Questions
           </p>
           <h2 className="font-display font-bold uppercase text-3xl md:text-4xl plate-heading mb-10">

@@ -22,7 +22,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
               <span className="font-display font-semibold uppercase text-lg text-white">
                 {item.q}
               </span>
-              <span className="shrink-0 font-utility text-arc-blue-bright text-xl leading-none">
+              <span className="shrink-0 font-utility text-ember-bright text-xl leading-none">
                 {isOpen ? "−" : "+"}
               </span>
             </button>

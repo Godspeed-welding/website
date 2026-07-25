@@ -36,16 +36,17 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="bg-arc-blue">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 h-8 flex items-center justify-between text-xs font-utility tracking-wide">
-          <span className="hidden sm:inline text-white/90">
+      <div className="hazard-stripe h-1.5" />
+      <div className="bg-black border-b border-ember/40">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 h-9 flex items-center justify-between text-xs font-utility tracking-wide">
+          <span className="hidden sm:inline text-steel-silver-dim uppercase tracking-widest">
             OSHA 10/30 Certified Crews · Bidding Nationwide
           </span>
           <div className="flex items-center gap-4 ml-auto">
-            <a href="tel:+17044986870" className="text-white hover:text-charcoal transition-colors">
+            <a href="tel:+17044986870" className="text-ember-bright hover:text-white font-semibold transition-colors">
               (704) 498-6870
             </a>
-            <a href="mailto:justin@godspeedwelding.com" className="hidden sm:inline text-white hover:text-charcoal transition-colors">
+            <a href="mailto:justin@godspeedwelding.com" className="hidden sm:inline text-steel-silver-dim hover:text-white transition-colors">
               justin@godspeedwelding.com
             </a>
           </div>
@@ -58,7 +59,7 @@ export default function Nav() {
       >
       <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="font-display font-extrabold tracking-wide text-xl md:text-2xl uppercase text-white">
-          Godspeed <span className="text-arc-blue-bright">Welding</span>
+          Godspeed <span className="text-ember-bright">Welding</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 font-display uppercase tracking-wider text-sm text-steel-silver-dim">
@@ -76,7 +77,7 @@ export default function Nav() {
                 <div className="bg-gunmetal border border-white/10 flex flex-col">
                   <Link
                     href="/services"
-                    className="px-4 py-3 text-sm text-arc-blue-bright hover:bg-white/5 transition-colors border-b border-white/10"
+                    className="px-4 py-3 text-sm text-ember-bright hover:bg-white/5 transition-colors border-b border-white/10"
                   >
                     All Services
                   </Link>
@@ -128,7 +129,7 @@ export default function Nav() {
 
           <Link
             href="/contact"
-            className="rounded-[1px] border border-arc-blue/60 px-4 py-2 text-steel-silver hover:bg-arc-blue/15 hover:text-white transition-colors"
+            className="rounded-[1px] border border-ember/60 px-4 py-2 text-steel-silver hover:bg-ember/15 hover:text-white transition-colors"
           >
             Get a Bid
           </Link>
@@ -166,7 +167,7 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={() => setOpen(false)} className="text-arc-blue-bright">
+            <Link href="/contact" onClick={() => setOpen(false)} className="text-ember-bright">
               Get a Bid
             </Link>
           </div>

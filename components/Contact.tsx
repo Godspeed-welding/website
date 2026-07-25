@@ -35,10 +35,10 @@ export default function Contact() {
               className="group bg-gunmetal p-8 md:p-10 flex flex-col justify-between hover:bg-gunmetal-light transition-colors"
             >
               <div>
-                <span className="font-utility text-xs tracking-widest uppercase text-arc-blue-bright">
+                <span className="font-utility text-xs tracking-widest uppercase text-ember-bright">
                   {a.label}
                 </span>
-                <div className="font-display font-bold text-2xl md:text-3xl text-white mt-3 mb-3 group-hover:text-arc-blue-bright transition-colors">
+                <div className="font-display font-bold text-2xl md:text-3xl text-white mt-3 mb-3 group-hover:text-ember-bright transition-colors">
                   {a.detail}
                 </div>
                 <p className="text-sm text-steel-silver-dim leading-relaxed">{a.sub}</p>

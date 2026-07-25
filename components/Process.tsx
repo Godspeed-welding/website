@@ -30,7 +30,7 @@ export default function Process() {
     <section id="process" className="relative bg-charcoal py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl mb-16 md:mb-24">
-          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
             How a Job Moves
           </p>
           <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
@@ -47,7 +47,7 @@ export default function Process() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.4, ease: "easeInOut" }}
               style={{ transformOrigin: "left" }}
-              className="h-px w-full bg-gradient-to-r from-arc-blue via-arc-blue-bright to-weld-spark"
+              className="h-px w-full bg-gradient-to-r from-ember via-ember-bright to-weld-spark"
             />
           </div>
 
@@ -55,7 +55,7 @@ export default function Process() {
             {STEPS.map((s) => (
               <div key={s.n} className="relative">
                 <div className="flex md:block items-center gap-4 mb-4">
-                  <span className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full bg-gunmetal border border-arc-blue/50 font-utility text-arc-blue-bright text-sm shrink-0">
+                  <span className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full bg-gunmetal border border-ember/50 font-utility text-ember-bright text-sm shrink-0">
                     {s.n}
                   </span>
                   <h3 className="md:mt-5 font-display font-bold uppercase text-2xl text-white">

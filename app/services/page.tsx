@@ -49,7 +49,7 @@ export default function ServicesPage() {
             <Link
               key={s.href}
               href={s.href}
-              className="group block border border-white/10 bg-gunmetal hover:border-arc-blue/50 transition-colors"
+              className="group block border border-white/10 bg-gunmetal hover:border-ember/50 transition-colors"
             >
               <div className="relative h-56 overflow-hidden">
                 <Image
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                   {s.title}
                 </h2>
                 <p className="text-sm text-steel-silver-dim leading-relaxed mb-4">{s.copy}</p>
-                <span className="font-display uppercase tracking-wider text-sm text-arc-blue-bright">
+                <span className="font-display uppercase tracking-wider text-sm text-ember-bright">
                   Learn More &rarr;
                 </span>
               </div>

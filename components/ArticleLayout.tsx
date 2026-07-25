@@ -15,15 +15,15 @@ export default function ArticleLayout({
 }) {
   return (
     <article className="bg-charcoal">
-      <header className="pt-44 pb-14 md:pt-52 md:pb-16 bg-gunmetal border-b border-white/10">
+      <header className="pt-48 pb-14 md:pt-56 md:pb-16 bg-gunmetal border-b border-white/10">
         <div className="mx-auto max-w-3xl px-6 md:px-10">
           <Link
             href="/resources"
-            className="font-utility text-xs tracking-widest uppercase text-steel-silver-dim hover:text-arc-blue-bright transition-colors"
+            className="font-utility text-xs tracking-widest uppercase text-steel-silver-dim hover:text-ember-bright transition-colors"
           >
             &larr; Resource Center
           </Link>
-          <p className="font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mt-6 mb-4">
+          <p className="font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mt-6 mb-4">
             {category} · {readTime}
           </p>
           <h1 className="font-display font-bold uppercase text-3xl md:text-5xl plate-heading leading-[1.05] mb-5">

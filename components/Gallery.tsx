@@ -18,7 +18,7 @@ export default function Gallery() {
             <button
               key={file}
               onClick={() => setActive(i)}
-              className="block w-full mb-3 overflow-hidden break-inside-avoid border border-transparent hover:border-arc-blue-bright/60 transition-colors"
+              className="block w-full mb-3 overflow-hidden break-inside-avoid border border-transparent hover:border-ember-bright/60 transition-colors"
             >
               <Image
                 src={`/images/${file}`}
@@ -35,7 +35,7 @@ export default function Gallery() {
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setVisibleCount((c) => c + 16)}
-              className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-arc-blue-bright hover:text-white text-steel-silver px-7 py-3 rounded-[1px] transition-colors"
+              className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-ember-bright hover:text-white text-steel-silver px-7 py-3 rounded-[1px] transition-colors"
             >
               Show More
             </button>
