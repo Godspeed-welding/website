@@ -14,8 +14,8 @@ export default function Hero() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="top" ref={scrollRef} className="relative h-[220vh]">
-      <div className="sticky top-0 h-[100svh] flex items-end overflow-hidden">
+    <section id="top" ref={scrollRef} className="relative h-[220dvh]">
+      <div className="sticky top-0 h-[100dvh] flex items-end overflow-hidden">
         <SteelBeamBackground scrollRef={scrollRef} />
 
         <div className="relative z-10 mx-auto max-w-7xl w-full px-6 md:px-10 pb-16 md:pb-24 pt-48">

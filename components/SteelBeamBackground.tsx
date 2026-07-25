@@ -48,7 +48,7 @@ export default function SteelBeamBackground({
 
       <svg
         viewBox="0 0 1200 800"
-        className="absolute inset-0 w-full h-full hidden sm:block"
+        className="absolute inset-0 w-full h-full"
         preserveAspectRatio="xMaxYMid slice"
       >
         <g opacity="0.9">
