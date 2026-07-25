@@ -1,23 +1,23 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { RefObject } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // A technical line-drawing of a steel frame, built entirely in SVG - no
-// photo. The frame assembles as the user scrolls the hero out of view,
-// driven by real scroll position (useScroll -> scrollYProgress), the same
-// technique behind "scrollytelling" building-assembly effects: nothing is
-// on a timer, every piece's reveal is a function of how far you've
-// scrolled. Scroll back up and it disassembles.
-export default function SteelBeamBackground() {
-  const ref = useRef<HTMLDivElement>(null);
+// photo. The frame assembles as the user scrolls, driven by real scroll
+// position against the tall outer section in Hero.tsx (the sticky pin
+// pattern) - not this component's own container, since that's pinned in
+// place and wouldn't produce useful scroll progress on its own.
+export default function SteelBeamBackground({
+  scrollRef,
+}: {
+  scrollRef: RefObject<HTMLDivElement | null>;
+}) {
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: scrollRef,
     offset: ["start start", "end start"],
   });
 
-  // stagger each piece across the first ~60% of the scroll range so the
-  // whole thing finishes assembling well before the section scrolls away
   const seg = (start: number, end: number) => useTransform(scrollYProgress, [start, end], [0, 1]);
 
   const baseLine = seg(0, 0.12);
@@ -30,7 +30,7 @@ export default function SteelBeamBackground() {
   const callout = seg(0.58, 0.68);
 
   return (
-    <div ref={ref} className="absolute inset-0 overflow-hidden bg-black">
+    <div className="absolute inset-0 overflow-hidden bg-black">
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <defs>
           <pattern id="ibeam-pattern" width="90" height="90" patternUnits="userSpaceOnUse">
