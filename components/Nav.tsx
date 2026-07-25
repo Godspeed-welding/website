@@ -39,7 +39,7 @@ export default function Nav() {
               href={l.href}
               className={
                 l.href === "#contact"
-                  ? "rounded-sm border border-arc-blue/60 px-4 py-2 text-steel-silver hover:bg-arc-blue/15 hover:text-white transition-colors"
+                  ? "rounded-[1px] border border-arc-blue/60 px-4 py-2 text-steel-silver hover:bg-arc-blue/15 hover:text-white transition-colors"
                   : "hover:text-white transition-colors"
               }
             >

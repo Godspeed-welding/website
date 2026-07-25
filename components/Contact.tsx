@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-charcoal border border-white/15 focus:border-arc-blue-bright rounded-sm px-4 py-3 text-steel-silver placeholder:text-steel-silver-dim/60 outline-none transition-colors";
+    "w-full bg-charcoal border border-white/15 focus:border-arc-blue-bright rounded-[1px] px-4 py-3 text-steel-silver placeholder:text-steel-silver-dim/60 outline-none transition-colors";
 
   return (
     <section id="contact" className="relative bg-charcoal py-24 md:py-32">
@@ -70,7 +70,7 @@ export default function Contact() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
             onSubmit={handleSubmit}
-            className="lg:col-span-3 bg-gunmetal border border-white/10 rounded-sm p-7 md:p-10"
+            className="lg:col-span-3 bg-gunmetal border border-white/10 rounded-[1px] p-7 md:p-10"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <input
@@ -120,7 +120,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="mt-6 font-display uppercase tracking-wider text-sm md:text-base bg-arc-blue hover:bg-arc-blue-bright text-white px-8 py-3.5 rounded-sm transition-colors w-full sm:w-auto"
+              className="mt-6 font-display uppercase tracking-wider text-sm md:text-base bg-arc-blue hover:bg-arc-blue-bright text-white px-8 py-3.5 rounded-[1px] transition-colors w-full sm:w-auto"
             >
               Send Bid Request
             </button>

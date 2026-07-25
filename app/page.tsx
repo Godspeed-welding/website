@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Capabilities from "@/components/Capabilities";
-import Stats from "@/components/Stats";
+import Credentials from "@/components/Credentials";
 import Process from "@/components/Process";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
@@ -14,7 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Capabilities />
-        <Stats />
+        <Credentials />
         <Process />
         <Gallery />
         <Contact />

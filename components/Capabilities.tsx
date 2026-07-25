@@ -32,10 +32,10 @@ export default function Capabilities() {
     <section id="capabilities" className="relative bg-gunmetal py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl mb-14 md:mb-20">
-          <p className="font-utility text-xs tracking-[0.3em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
             What We Build
           </p>
-          <h2 className="font-display font-extrabold uppercase text-4xl md:text-5xl steel-text leading-[0.95]">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
             Three trades. One crew. No subcontracting the hard parts.
           </h2>
         </div>

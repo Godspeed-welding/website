@@ -46,24 +46,38 @@ body {
   }
 }
 
-.steel-text {
-  background: linear-gradient(180deg, #f4f6f8 0%, #c7cfd6 45%, #9aa5af 55%, #dbe1e6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Solid, restrained heading treatment - no gradient-clip effects.
+   This is a commercial steel erector's site, not a SaaS landing page. */
+.plate-heading {
+  color: #eef1f4;
 }
 
-.arc-text {
-  background: linear-gradient(180deg, var(--arc-blue-bright) 0%, var(--arc-blue) 60%, #295da8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* nameplate / spec-sheet style badge, used for certifications and data */
+.data-plate {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
 }
 
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--arc-blue-bright);
   outline-offset: 3px;
+}
+
+/* thin technical-drawing style corner ticks for section eyebrows */
+.spec-tick {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.spec-tick::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.7rem;
+  height: 1px;
+  background: var(--arc-blue-bright);
+  transform: translateY(-50%);
 }
 
 ::selection {

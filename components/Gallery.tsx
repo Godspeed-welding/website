@@ -16,10 +16,10 @@ export default function Gallery() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14 md:mb-16">
           <div className="max-w-2xl">
-            <p className="font-utility text-xs tracking-[0.3em] uppercase text-arc-blue-bright mb-3">
+            <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
               Recent Work
             </p>
-            <h2 className="font-display font-extrabold uppercase text-4xl md:text-5xl steel-text leading-[0.95]">
+            <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
               Straight from the job site.
             </h2>
           </div>
@@ -38,7 +38,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-              className="group relative block w-full mb-3 overflow-hidden rounded-sm break-inside-avoid"
+              className="group relative block w-full mb-3 overflow-hidden rounded-[1px] break-inside-avoid"
             >
               <Image
                 src={`/images/${file}`}
@@ -57,7 +57,7 @@ export default function Gallery() {
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setVisibleCount((c) => c + 16)}
-              className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-arc-blue-bright hover:text-white text-steel-silver px-7 py-3 rounded-sm transition-colors"
+              className="font-display uppercase tracking-wider text-sm border border-steel-silver-dim/60 hover:border-arc-blue-bright hover:text-white text-steel-silver px-7 py-3 rounded-[1px] transition-colors"
             >
               Show More
             </button>

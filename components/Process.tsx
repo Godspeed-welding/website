@@ -30,10 +30,10 @@ export default function Process() {
     <section id="process" className="relative bg-charcoal py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl mb-16 md:mb-24">
-          <p className="font-utility text-xs tracking-[0.3em] uppercase text-arc-blue-bright mb-3">
+          <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-arc-blue-bright mb-3">
             How a Job Moves
           </p>
-          <h2 className="font-display font-extrabold uppercase text-4xl md:text-5xl steel-text leading-[0.95]">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
             One seam, start to finish.
           </h2>
         </div>
