@@ -1,16 +1,36 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
-// A technical line-drawing of a steel frame connection, built entirely in
-// SVG - no photo. Reads as a structural shop drawing / blueprint rather
-// than a stock hero image, costs almost nothing over the wire, and is
-// deliberately positioned in the right two-thirds of the frame so it
-// never overlaps the headline text, which always sits bottom-left.
+// A technical line-drawing of a steel frame, built entirely in SVG - no
+// photo. The frame assembles as the user scrolls the hero out of view,
+// driven by real scroll position (useScroll -> scrollYProgress), the same
+// technique behind "scrollytelling" building-assembly effects: nothing is
+// on a timer, every piece's reveal is a function of how far you've
+// scrolled. Scroll back up and it disassembles.
 export default function SteelBeamBackground() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  // stagger each piece across the first ~60% of the scroll range so the
+  // whole thing finishes assembling well before the section scrolls away
+  const seg = (start: number, end: number) => useTransform(scrollYProgress, [start, end], [0, 1]);
+
+  const baseLine = seg(0, 0.12);
+  const col1 = seg(0.05, 0.2);
+  const col2 = seg(0.1, 0.25);
+  const col3 = seg(0.15, 0.3);
+  const beams = seg(0.28, 0.42);
+  const bracing = seg(0.4, 0.55);
+  const bolts = seg(0.52, 0.6);
+  const callout = seg(0.58, 0.68);
+
   return (
-    <div className="absolute inset-0 overflow-hidden bg-black">
-      {/* tiled I-beam cross-section pattern, very low opacity, full bleed */}
+    <div ref={ref} className="absolute inset-0 overflow-hidden bg-black">
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <defs>
           <pattern id="ibeam-pattern" width="90" height="90" patternUnits="userSpaceOnUse">
@@ -26,8 +46,6 @@ export default function SteelBeamBackground() {
         <rect width="100%" height="100%" fill="url(#ibeam-pattern)" opacity="0.05" />
       </svg>
 
-      {/* main technical illustration - anchored to the right side of the
-          frame only, well clear of the bottom-left text zone */}
       <svg
         viewBox="0 0 1200 800"
         className="absolute inset-0 w-full h-full hidden sm:block"
@@ -40,34 +58,19 @@ export default function SteelBeamBackground() {
             strokeWidth="1"
             fill="none"
             opacity="0.22"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            style={{ pathLength: baseLine }}
           />
 
-          {[780, 960, 1140].map((x, i) => (
-            <motion.line
-              key={x}
-              x1={x}
-              y1={560}
-              x2={x}
-              y2={260}
-              stroke="white"
-              strokeWidth="2"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 + i * 0.12, ease: "easeInOut" }}
-            />
-          ))}
+          <motion.line x1={780} y1={560} x2={780} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col1 }} />
+          <motion.line x1={960} y1={560} x2={960} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col2 }} />
+          <motion.line x1={1140} y1={560} x2={1140} y2={260} stroke="white" strokeWidth="2" style={{ pathLength: col3 }} />
 
           <motion.path
             d="M780 260 L960 240 L1140 260"
             stroke="white"
             strokeWidth="2.5"
             fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1, delay: 0.7, ease: "easeInOut" }}
+            style={{ pathLength: beams }}
           />
 
           <motion.path
@@ -77,16 +80,14 @@ export default function SteelBeamBackground() {
             strokeDasharray="4 5"
             fill="none"
             opacity="0.35"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.3, delay: 1.1, ease: "easeInOut" }}
+            style={{ pathLength: bracing }}
           />
 
           {[
             [780, 260],
             [960, 240],
             [1140, 260],
-          ].map(([cx, cy], i) => (
+          ].map(([cx, cy]) => (
             <motion.circle
               key={`${cx}-${cy}`}
               cx={cx}
@@ -95,19 +96,11 @@ export default function SteelBeamBackground() {
               stroke="white"
               strokeWidth="1.5"
               fill="black"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: 1.6 + i * 0.08 }}
+              style={{ scale: bolts, opacity: bolts }}
             />
           ))}
 
-          {/* dimension line + beam callout - sits above the frame, still
-              well within the right-side zone, clear of the headline */}
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 2 }}
-          >
+          <motion.g style={{ opacity: callout }}>
             <line x1="780" y1="205" x2="1140" y2="205" stroke="white" strokeWidth="0.75" opacity="0.45" />
             <line x1="780" y1="200" x2="780" y2="210" stroke="white" strokeWidth="0.75" opacity="0.45" />
             <line x1="1140" y1="200" x2="1140" y2="210" stroke="white" strokeWidth="0.75" opacity="0.45" />
@@ -118,8 +111,6 @@ export default function SteelBeamBackground() {
         </g>
       </svg>
 
-      {/* strong fade on the left/bottom where headline text sits, so the
-          illustration never has to compete with real words */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/40" />
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/70" />
     </div>
