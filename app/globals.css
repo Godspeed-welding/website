@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --charcoal: #14171b;
+  --gunmetal: #22262d;
+  --gunmetal-light: #2e333c;
+  --steel-silver: #b8c0c8;
+  --steel-silver-dim: #6b7480;
+  --arc-blue: #3b7ddd;
+  --arc-blue-bright: #5b9bf5;
+  --weld-spark: #ffd9a0;
+  --weld-hot: #fff2df;
+}
+
+@theme inline {
+  --color-charcoal: var(--charcoal);
+  --color-gunmetal: var(--gunmetal);
+  --color-gunmetal-light: var(--gunmetal-light);
+  --color-steel-silver: var(--steel-silver);
+  --color-steel-silver-dim: var(--steel-silver-dim);
+  --color-arc-blue: var(--arc-blue);
+  --color-arc-blue-bright: var(--arc-blue-bright);
+  --color-weld-spark: var(--weld-spark);
+  --color-weld-hot: var(--weld-hot);
+  --font-display: var(--font-barlow-condensed);
+  --font-body: var(--font-inter);
+  --font-utility: var(--font-plex-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--steel-silver);
+  font-family: var(--font-body), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.steel-text {
+  background: linear-gradient(180deg, #f4f6f8 0%, #c7cfd6 45%, #9aa5af 55%, #dbe1e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.arc-text {
+  background: linear-gradient(180deg, var(--arc-blue-bright) 0%, var(--arc-blue) 60%, #295da8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--arc-blue-bright);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--arc-blue);
+  color: #fff;
+}
