@@ -5,23 +5,39 @@ import { motion } from "framer-motion";
 const STEPS = [
   {
     n: "01",
-    title: "Bid",
-    copy: "Takeoffs, scope review, and a straight number back to the GC — fast enough to matter during the bid window.",
+    title: "Drawing Review & RFIs",
+    copy:
+      "Structural drawings get reviewed against the foundation survey and connection details before we bid, not after. Anything ambiguous goes back to the engineer of record as an RFI in the bid phase — not discovered mid-erection.",
   },
   {
     n: "02",
-    title: "Fabricate",
-    copy: "Shop-built stairs, rail, and custom steel, fit and finished before it ever hits the truck.",
+    title: "Shop Drawings & Detailing",
+    copy:
+      "Connection details, bolt patterns, and piece marks get detailed and submitted for EOR approval before a single piece of steel is cut. Approved shop drawings are the contract for what actually gets built.",
   },
   {
     n: "03",
-    title: "Erect",
-    copy: "Crews on site with the crane, the plan, and the schedule — moving at the pace your job needs.",
+    title: "Procurement & Mill Certification",
+    copy:
+      "Steel is ordered against mill lead times with certified mill test reports tracked per heat number — so material traceability holds up if a special inspector or the EOR asks for it.",
   },
   {
     n: "04",
-    title: "Finish",
-    copy: "Punch list, inspection-ready welds, and a clean handoff. No callbacks chasing loose ends.",
+    title: "Fabrication",
+    copy:
+      "Shop-built connections, stairs, rail, and custom steel — fit-checked, welded to spec, and coated before it ever leaves the shop floor.",
+  },
+  {
+    n: "05",
+    title: "Site Logistics & Erection",
+    copy:
+      "Crane sizing, rigging plans, and erection sequencing built around your site access and schedule — then crews on site executing that plan, not improvising one.",
+  },
+  {
+    n: "06",
+    title: "Special Inspection & Closeout",
+    copy:
+      "Connections get checked as they close out, coordinated directly with third-party special inspectors where required. Punch list and closeout documentation are part of the job, not an afterthought once the crane leaves.",
   },
 ];
 
@@ -31,34 +47,33 @@ export default function Process() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl mb-16 md:mb-24">
           <p className="spec-tick font-utility text-xs tracking-[0.25em] uppercase text-ember-bright mb-3">
-            How a Job Moves
+            How A Job Actually Moves
           </p>
           <h2 className="font-display font-bold uppercase text-4xl md:text-5xl plate-heading leading-[0.95]">
-            One seam, start to finish.
+            From RFI to closeout documentation.
           </h2>
         </div>
 
         <div className="relative">
-          {/* connecting seam line - desktop */}
           <div className="hidden md:block absolute top-6 left-0 right-0 h-px bg-white/10">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.4, ease: "easeInOut" }}
+              transition={{ duration: 1.6, ease: "easeInOut" }}
               style={{ transformOrigin: "left" }}
-              className="h-px w-full bg-gradient-to-r from-ember via-ember-bright to-weld-spark"
+              className="h-px w-full bg-white/60"
             />
           </div>
 
-          <div className="grid md:grid-cols-4 gap-10 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-x-8 gap-y-12">
             {STEPS.map((s) => (
               <div key={s.n} className="relative">
                 <div className="flex md:block items-center gap-4 mb-4">
-                  <span className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full bg-gunmetal border border-ember/50 font-utility text-ember-bright text-sm shrink-0">
+                  <span className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full bg-gunmetal border border-white/30 font-utility text-white text-sm shrink-0">
                     {s.n}
                   </span>
-                  <h3 className="md:mt-5 font-display font-bold uppercase text-2xl text-white">
+                  <h3 className="md:mt-5 font-display font-bold uppercase text-xl text-white leading-tight">
                     {s.title}
                   </h3>
                 </div>

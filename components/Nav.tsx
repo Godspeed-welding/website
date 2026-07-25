@@ -13,6 +13,8 @@ const BUILDING_TYPES = [
   { href: "/building-types/retail-big-box", label: "Retail & Big-Box" },
   { href: "/building-types/industrial-warehouse", label: "Industrial & Warehouse" },
   { href: "/building-types/agricultural-rural", label: "Agricultural & Rural" },
+  { href: "/building-types/education", label: "Education" },
+  { href: "/building-types/healthcare", label: "Healthcare" },
 ];
 
 const LINKS = [
@@ -107,6 +109,12 @@ export default function Nav() {
             {typesOpen && (
               <div className="absolute top-full left-0 pt-3 w-64">
                 <div className="bg-gunmetal border border-white/10 flex flex-col">
+                  <Link
+                    href="/building-types"
+                    className="px-4 py-3 text-sm text-white font-semibold hover:bg-white/5 transition-colors border-b border-white/10"
+                  >
+                    All Building Types
+                  </Link>
                   {BUILDING_TYPES.map((s) => (
                     <Link
                       key={s.href}

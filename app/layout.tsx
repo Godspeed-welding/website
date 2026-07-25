@@ -1,50 +1,13 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-
-const barlowCondensed = Barlow_Condensed({
-  variable: "--font-barlow-condensed",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
-
-export const metadata: Metadata = {
-  title: {
-    default: "Godspeed Welding | Commercial Steel Erection, Welding & Fabrication",
-    template: "%s | Godspeed Welding",
-  },
-  description:
-    "Godspeed Welding delivers commercial steel erection, structural welding, and custom fabrication for general contractors and developers nationwide.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const metadata: Metadata = { title: "t", description: "t" };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${barlowCondensed.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-charcoal text-steel-silver">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <Nav /><main className="flex-1">{children}</main><Footer />
       </body>
     </html>
   );

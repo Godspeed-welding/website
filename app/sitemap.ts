@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/building-types/retail-big-box",
     "/building-types/industrial-warehouse",
     "/building-types/agricultural-rural",
+    "/building-types/education",
+    "/building-types/healthcare",
     "/work",
     "/resources",
     "/about",

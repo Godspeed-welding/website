@@ -15,6 +15,8 @@ const COLUMNS = [
       { href: "/building-types/retail-big-box", label: "Retail & Big-Box" },
       { href: "/building-types/industrial-warehouse", label: "Industrial & Warehouse" },
       { href: "/building-types/agricultural-rural", label: "Agricultural & Rural" },
+      { href: "/building-types/education", label: "Education" },
+      { href: "/building-types/healthcare", label: "Healthcare" },
     ],
   },
   {

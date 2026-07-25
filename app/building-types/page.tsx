@@ -29,6 +29,18 @@ const TYPES = [
     img: "/images/1000009653.jpg",
     copy: "Rural commercial and agricultural steel buildings, wherever the site actually is.",
   },
+  {
+    title: "Education",
+    href: "/building-types/education",
+    img: null,
+    copy: "Gymnasiums, additions, and campus buildings, scheduled around an active campus. Now bidding.",
+  },
+  {
+    title: "Healthcare",
+    href: "/building-types/healthcare",
+    img: null,
+    copy: "Tighter tolerances and heavier MEP coordination than standard commercial space. Now bidding.",
+  },
 ];
 
 export default function BuildingTypesPage() {
@@ -48,15 +60,23 @@ export default function BuildingTypesPage() {
               href={t.href}
               className="group block border border-white/10 bg-gunmetal hover:border-ember/50 transition-colors"
             >
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={t.img}
-                  alt={t.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+              {t.img ? (
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={t.img}
+                    alt={t.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              ) : (
+                <div className="h-64 flex items-center justify-center border-b border-white/10">
+                  <span className="font-utility text-xs tracking-widest uppercase text-steel-silver-dim">
+                    Now Bidding
+                  </span>
+                </div>
+              )}
               <div className="p-7">
                 <h2 className="font-display font-bold uppercase text-xl text-white mb-3">
                   {t.title}
