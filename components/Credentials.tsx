@@ -1,10 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-// NOTE for Brock: add AISC certification, bonding capacity, and EMR rating
-// here as soon as you have the documentation — deliberately left off for now
-// rather than guessed at.
+// NOTE for Brock: add AISC certification, bonding capacity, EMR rating, and
+// years-in-business here as soon as you have the documentation - these are
+// the numbers that actually differentiate a bid, more than OSHA 10/30 alone.
 const CREDENTIALS = [
   {
     label: "Crew Training",
@@ -36,15 +32,8 @@ export default function Credentials() {
           Credentials &amp; Standards
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
-          {CREDENTIALS.map((c, i) => (
-            <motion.div
-              key={c.label}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="data-plate bg-gunmetal p-5 md:p-6"
-            >
+          {CREDENTIALS.map((c) => (
+            <div key={c.label} className="data-plate bg-gunmetal p-5 md:p-6">
               <div className="font-utility text-[0.65rem] tracking-widest uppercase text-steel-silver-dim mb-2">
                 {c.label}
               </div>
@@ -52,7 +41,7 @@ export default function Credentials() {
                 {c.value}
               </div>
               <p className="text-sm text-steel-silver-dim leading-snug">{c.note}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

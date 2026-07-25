@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/75 to-charcoal/30" />
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 via-transparent to-charcoal/50" />
 
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 md:px-10 pb-16 md:pb-24 pt-40">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 md:px-10 pb-16 md:pb-24 pt-44">
         <div className="max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -79,17 +80,17 @@ export default function Hero() {
             className="mt-9 flex flex-wrap gap-4"
           >
             <a
-              href="#contact"
+              href="tel:+17044986870"
               className="font-display uppercase tracking-wider text-sm md:text-base bg-arc-blue hover:bg-arc-blue-bright text-white px-7 py-3.5 transition-colors"
             >
-              Request a Bid
+              Call (704) 498-6870
             </a>
-            <a
-              href="#work"
+            <Link
+              href="/work"
               className="font-display uppercase tracking-wider text-sm md:text-base border border-steel-silver-dim/60 hover:border-steel-silver text-steel-silver px-7 py-3.5 transition-colors"
             >
               See the Work
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

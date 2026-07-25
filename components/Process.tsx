@@ -52,15 +52,8 @@ export default function Process() {
           </div>
 
           <div className="grid md:grid-cols-4 gap-10 md:gap-8">
-            {STEPS.map((s, i) => (
-              <motion.div
-                key={s.n}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative"
-              >
+            {STEPS.map((s) => (
+              <div key={s.n} className="relative">
                 <div className="flex md:block items-center gap-4 mb-4">
                   <span className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full bg-gunmetal border border-arc-blue/50 font-utility text-arc-blue-bright text-sm shrink-0">
                     {s.n}
@@ -70,7 +63,7 @@ export default function Process() {
                   </h3>
                 </div>
                 <p className="text-steel-silver-dim leading-relaxed">{s.copy}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

@@ -1,25 +1,21 @@
-import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Capabilities from "@/components/Capabilities";
 import Credentials from "@/components/Credentials";
 import Process from "@/components/Process";
-import Gallery from "@/components/Gallery";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import BuildingTypesTeaser from "@/components/BuildingTypesTeaser";
+import ResourcesTeaser from "@/components/ResourcesTeaser";
+import CtaBand from "@/components/CtaBand";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <main className="flex-1">
-        <Hero />
-        <Capabilities />
-        <Credentials />
-        <Process />
-        <Gallery />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <Capabilities />
+      <Credentials />
+      <Process />
+      <BuildingTypesTeaser />
+      <ResourcesTeaser />
+      <CtaBand />
     </>
   );
 }

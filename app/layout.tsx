@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -21,7 +23,10 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Godspeed Welding | Commercial Steel Erection, Welding & Fabrication",
+  title: {
+    default: "Godspeed Welding | Commercial Steel Erection, Welding & Fabrication",
+    template: "%s | Godspeed Welding",
+  },
   description:
     "Godspeed Welding delivers commercial steel erection, structural welding, and custom fabrication for general contractors and developers nationwide.",
 };
@@ -37,7 +42,9 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-charcoal text-steel-silver">
-        {children}
+        <Nav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
